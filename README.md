@@ -1,2 +1,2 @@
-# civil-api-ts
-Auto-generated Typescript handlers for Civil APIs
+# civil-api-es
+Auto-generated ECMAScript JavaScript handlers for Civil APIs.
