@@ -132,7 +132,7 @@ export declare const ParcelService: GenService<{
     output: typeof UpdateParcelAttributeResponseSchema;
   },
   /**
-   * Retrieves all details about a parcel in a JSON object
+   * Retrieves all details about a parcel in a JSON object.
    *
    * @generated from rpc civil.parcels.v1.ParcelService.GetParcel
    */
@@ -142,7 +142,7 @@ export declare const ParcelService: GenService<{
     output: typeof GetParcelResponseSchema;
   },
   /**
-   * Retrieves a specified attribute value for a given parcel
+   * Retrieves a specified attribute value for a given parcel.
    *
    * @generated from rpc civil.parcels.v1.ParcelService.GetParcelAttribute
    */
