@@ -368,6 +368,8 @@ export declare const ParcelsService: GenService<{
     output: typeof GetParcelAttributesResponseSchema;
   },
   /**
+   * Retrieves a set of summary statistics about the specified numerical attribute for a specified list of parcels. Optionally returns the values as well
+   *
    * @generated from rpc civil.parcels.v1.ParcelsService.GetNumericalStats
    */
   getNumericalStats: {
@@ -376,7 +378,7 @@ export declare const ParcelsService: GenService<{
     output: typeof GetNumericalStatsResponseSchema;
   },
   /**
-   * Retrieves a set of summary statistics about the specified attribute for a specified list of parcels. Optionally returns the values as well
+   * Retrieves a set of summary statistics about the specified categorical attribute for a specified list of parcels. Optionally returns the values as well
    *
    * @generated from rpc civil.parcels.v1.ParcelsService.GetCategoricalStats
    */
