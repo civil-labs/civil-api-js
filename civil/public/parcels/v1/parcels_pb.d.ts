@@ -276,14 +276,14 @@ export declare type UpdateParcelRequest = Message<"civil.public.parcels.v1.Updat
   landAreaSqFt?: number;
 
   /**
-   * @generated from field: string market_land_value = 3;
+   * @generated from field: optional string market_land_value = 3;
    */
-  marketLandValue: string;
+  marketLandValue?: string;
 
   /**
-   * @generated from field: string assessed_land_value = 4;
+   * @generated from field: optional string assessed_land_value = 4;
    */
-  assessedLandValue: string;
+  assessedLandValue?: string;
 
   /**
    * @generated from field: optional string address_id = 5;
