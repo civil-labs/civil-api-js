@@ -3,7 +3,8 @@
 /* eslint-disable */
 
 import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
-import type { JsonObject, Message } from "@bufbuild/protobuf";
+import type { Message } from "@bufbuild/protobuf";
+import type { Timestamp } from "@bufbuild/protobuf/wkt";
 
 /**
  * Describes the file civil/public/parcels/v1/parcels.proto.
@@ -11,153 +12,332 @@ import type { JsonObject, Message } from "@bufbuild/protobuf";
 export declare const file_civil_public_parcels_v1_parcels: GenFile;
 
 /**
- * @generated from message civil.public.parcels.v1.UpdateParcelsAttributeRequest
+ * @generated from message civil.public.parcels.v1.ParcelAffordances
  */
-export declare type UpdateParcelsAttributeRequest = Message<"civil.public.parcels.v1.UpdateParcelsAttributeRequest"> & {
+export declare type ParcelAffordances = Message<"civil.public.parcels.v1.ParcelAffordances"> & {
+  /**
+   * Maximum Floor Area Ratio (FAR)
+   *
+   * @generated from field: optional double max_far = 1;
+   */
+  maxFar?: number;
+
+  /**
+   * Minimum lot size in square feet
+   *
+   * @generated from field: optional double min_lot_size_sq_ft = 2;
+   */
+  minLotSizeSqFt?: number;
+
+  /**
+   * Maximum legally permitted building height in feet
+   *
+   * @generated from field: optional double max_height_ft = 3;
+   */
+  maxHeightFt?: number;
+};
+
+/**
+ * Describes the message civil.public.parcels.v1.ParcelAffordances.
+ * Use `create(ParcelAffordancesSchema)` to create a new message.
+ */
+export declare const ParcelAffordancesSchema: GenMessage<ParcelAffordances>;
+
+/**
+ * @generated from message civil.public.parcels.v1.ParcelImprovementsSummary
+ */
+export declare type ParcelImprovementsSummary = Message<"civil.public.parcels.v1.ParcelImprovementsSummary"> & {
+  /**
+   * @generated from field: repeated string improvement_ids = 1;
+   */
+  improvementIds: string[];
+
+  /**
+   * Additives: Physically impossible to be negative
+   *
+   * @generated from field: optional double total_area_sq_ft = 2;
+   */
+  totalAreaSqFt?: number;
+
+  /**
+   * @generated from field: optional int32 total_bathrooms = 3;
+   */
+  totalBathrooms?: number;
+
+  /**
+   * @generated from field: optional int32 total_bedrooms = 4;
+   */
+  totalBedrooms?: number;
+
+  /**
+   * @generated from field: optional int32 total_units = 5;
+   */
+  totalUnits?: number;
+
+  /**
+   * Temporals: Bounded to realistic historical/future parameters
+   *
+   * @generated from field: optional int32 oldest_year_built = 6;
+   */
+  oldestYearBuilt?: number;
+
+  /**
+   * @generated from field: optional int32 newest_year_built = 7;
+   */
+  newestYearBuilt?: number;
+
+  /**
+   * Qualitatives: Bounded to Civil's specific property condition ordinal scale
+   *
+   * @generated from field: optional int32 lowest_condition_num = 8;
+   */
+  lowestConditionNum?: number;
+
+  /**
+   * @generated from field: optional int32 highest_condition_num = 9;
+   */
+  highestConditionNum?: number;
+};
+
+/**
+ * Describes the message civil.public.parcels.v1.ParcelImprovementsSummary.
+ * Use `create(ParcelImprovementsSummarySchema)` to create a new message.
+ */
+export declare const ParcelImprovementsSummarySchema: GenMessage<ParcelImprovementsSummary>;
+
+/**
+ * @generated from message civil.public.parcels.v1.Parcel
+ */
+export declare type Parcel = Message<"civil.public.parcels.v1.Parcel"> & {
+  /**
+   * @generated from field: string parcel_id = 1;
+   */
+  parcelId: string;
+
+  /**
+   * @generated from field: string address = 2;
+   */
+  address: string;
+
+  /**
+   * @generated from field: string address_id = 3;
+   */
+  addressId: string;
+
+  /**
+   * @generated from field: string owner_name = 4;
+   */
+  ownerName: string;
+
+  /**
+   * @generated from field: string owner_address = 5;
+   */
+  ownerAddress: string;
+
+  /**
+   * @generated from field: string owner_id = 6;
+   */
+  ownerId: string;
+
+  /**
+   * @generated from field: double land_area_sq_ft = 7;
+   */
+  landAreaSqFt: number;
+
+  /**
+   * @generated from field: string land_use = 8;
+   */
+  landUse: string;
+
+  /**
+   * @generated from field: optional string land_use_code = 9;
+   */
+  landUseCode?: string;
+
+  /**
+   * @generated from field: optional string neighborhood = 10;
+   */
+  neighborhood?: string;
+
+  /**
+   * @generated from field: optional string market_area = 11;
+   */
+  marketArea?: string;
+
+  /**
+   * @generated from field: repeated string zoning = 12;
+   */
+  zoning: string[];
+
+  /**
+   * @generated from field: repeated string zoning_codes = 13;
+   */
+  zoningCodes: string[];
+
+  /**
+   * @generated from field: string market_land_value = 14;
+   */
+  marketLandValue: string;
+
+  /**
+   * @generated from field: string assessed_land_value = 15;
+   */
+  assessedLandValue: string;
+
+  /**
+   * @generated from field: string market_improvement_value = 16;
+   */
+  marketImprovementValue: string;
+
+  /**
+   * @generated from field: string assessed_improvement_value = 17;
+   */
+  assessedImprovementValue: string;
+
+  /**
+   * @generated from field: civil.public.parcels.v1.ParcelAffordances affordances = 18;
+   */
+  affordances?: ParcelAffordances;
+
+  /**
+   * @generated from field: civil.public.parcels.v1.ParcelImprovementsSummary improvement_summary = 19;
+   */
+  improvementSummary?: ParcelImprovementsSummary;
+
+  /**
+   * @generated from field: string properties = 20;
+   */
+  properties: string;
+};
+
+/**
+ * Describes the message civil.public.parcels.v1.Parcel.
+ * Use `create(ParcelSchema)` to create a new message.
+ */
+export declare const ParcelSchema: GenMessage<Parcel>;
+
+/**
+ * @generated from message civil.public.parcels.v1.GetParcelsByIdRequest
+ */
+export declare type GetParcelsByIdRequest = Message<"civil.public.parcels.v1.GetParcelsByIdRequest"> & {
   /**
    * @generated from field: repeated string parcel_ids = 1;
    */
   parcelIds: string[];
 
   /**
-   * @generated from field: string attribute_name = 2;
+   * The historical or future effective date the user wants to view.
+   * If omitted, defaults to the current time.
+   *
+   * @generated from field: optional google.protobuf.Timestamp legal_as_of = 2;
    */
-  attributeName: string;
+  legalAsOf?: Timestamp;
 
   /**
-   * @generated from field: string attribute_value = 3;
+   * The time to reset the database state to
+   * If omitted, defaults to the current time.
+   *
+   * @generated from field: optional google.protobuf.Timestamp system_as_of = 3;
    */
-  attributeValue: string;
+  systemAsOf?: Timestamp;
 };
 
 /**
- * Describes the message civil.public.parcels.v1.UpdateParcelsAttributeRequest.
- * Use `create(UpdateParcelsAttributeRequestSchema)` to create a new message.
+ * Describes the message civil.public.parcels.v1.GetParcelsByIdRequest.
+ * Use `create(GetParcelsByIdRequestSchema)` to create a new message.
  */
-export declare const UpdateParcelsAttributeRequestSchema: GenMessage<UpdateParcelsAttributeRequest>;
+export declare const GetParcelsByIdRequestSchema: GenMessage<GetParcelsByIdRequest>;
 
 /**
- * @generated from message civil.public.parcels.v1.UpdateParcelsAttributeResponse
+ * @generated from message civil.public.parcels.v1.GetParcelsByIdResponse
  */
-export declare type UpdateParcelsAttributeResponse = Message<"civil.public.parcels.v1.UpdateParcelsAttributeResponse"> & {
-};
-
-/**
- * Describes the message civil.public.parcels.v1.UpdateParcelsAttributeResponse.
- * Use `create(UpdateParcelsAttributeResponseSchema)` to create a new message.
- */
-export declare const UpdateParcelsAttributeResponseSchema: GenMessage<UpdateParcelsAttributeResponse>;
-
-/**
- * @generated from message civil.public.parcels.v1.GetParcelRequest
- */
-export declare type GetParcelRequest = Message<"civil.public.parcels.v1.GetParcelRequest"> & {
+export declare type GetParcelsByIdResponse = Message<"civil.public.parcels.v1.GetParcelsByIdResponse"> & {
   /**
-   * @generated from field: string parcel_id = 1;
+   * A map of parcel records, keyed by their public ID.
+   *
+   * @generated from field: map<string, civil.public.parcels.v1.Parcel> parcels = 1;
    */
-  parcelId: string;
+  parcels: { [key: string]: Parcel };
 };
 
 /**
- * Describes the message civil.public.parcels.v1.GetParcelRequest.
- * Use `create(GetParcelRequestSchema)` to create a new message.
+ * Describes the message civil.public.parcels.v1.GetParcelsByIdResponse.
+ * Use `create(GetParcelsByIdResponseSchema)` to create a new message.
  */
-export declare const GetParcelRequestSchema: GenMessage<GetParcelRequest>;
+export declare const GetParcelsByIdResponseSchema: GenMessage<GetParcelsByIdResponse>;
 
 /**
- * @generated from message civil.public.parcels.v1.GetParcelResponse
+ * @generated from message civil.public.parcels.v1.UpdateParcelRequest
  */
-export declare type GetParcelResponse = Message<"civil.public.parcels.v1.GetParcelResponse"> & {
-  /**
-   * @generated from field: google.protobuf.Struct parcel_attributes = 1;
-   */
-  parcelAttributes?: JsonObject;
-};
-
-/**
- * Describes the message civil.public.parcels.v1.GetParcelResponse.
- * Use `create(GetParcelResponseSchema)` to create a new message.
- */
-export declare const GetParcelResponseSchema: GenMessage<GetParcelResponse>;
-
-/**
- * @generated from message civil.public.parcels.v1.GetParcelAttributeRequest
- */
-export declare type GetParcelAttributeRequest = Message<"civil.public.parcels.v1.GetParcelAttributeRequest"> & {
+export declare type UpdateParcelRequest = Message<"civil.public.parcels.v1.UpdateParcelRequest"> & {
   /**
    * @generated from field: string parcel_id = 1;
    */
   parcelId: string;
 
   /**
-   * @generated from field: string attribute_name = 2;
+   * @generated from field: optional double land_area_sq_ft = 2;
    */
-  attributeName: string;
+  landAreaSqFt?: number;
+
+  /**
+   * @generated from field: string market_land_value = 3;
+   */
+  marketLandValue: string;
+
+  /**
+   * @generated from field: string assessed_land_value = 4;
+   */
+  assessedLandValue: string;
+
+  /**
+   * @generated from field: optional string address_id = 5;
+   */
+  addressId?: string;
+
+  /**
+   * @generated from field: optional string owner_id = 6;
+   */
+  ownerId?: string;
+
+  /**
+   * @generated from field: optional string land_use_id = 7;
+   */
+  landUseId?: string;
+
+  /**
+   * @generated from field: optional string neighborhood_id = 8;
+   */
+  neighborhoodId?: string;
+
+  /**
+   * @generated from field: optional string market_area_id = 9;
+   */
+  marketAreaId?: string;
 };
 
 /**
- * Describes the message civil.public.parcels.v1.GetParcelAttributeRequest.
- * Use `create(GetParcelAttributeRequestSchema)` to create a new message.
+ * Describes the message civil.public.parcels.v1.UpdateParcelRequest.
+ * Use `create(UpdateParcelRequestSchema)` to create a new message.
  */
-export declare const GetParcelAttributeRequestSchema: GenMessage<GetParcelAttributeRequest>;
+export declare const UpdateParcelRequestSchema: GenMessage<UpdateParcelRequest>;
 
 /**
- * @generated from message civil.public.parcels.v1.GetParcelAttributeResponse
+ * @generated from message civil.public.parcels.v1.UpdateParcelResponse
  */
-export declare type GetParcelAttributeResponse = Message<"civil.public.parcels.v1.GetParcelAttributeResponse"> & {
-  /**
-   * @generated from field: string attribute_value = 3;
-   */
-  attributeValue: string;
+export declare type UpdateParcelResponse = Message<"civil.public.parcels.v1.UpdateParcelResponse"> & {
 };
 
 /**
- * Describes the message civil.public.parcels.v1.GetParcelAttributeResponse.
- * Use `create(GetParcelAttributeResponseSchema)` to create a new message.
+ * Describes the message civil.public.parcels.v1.UpdateParcelResponse.
+ * Use `create(UpdateParcelResponseSchema)` to create a new message.
  */
-export declare const GetParcelAttributeResponseSchema: GenMessage<GetParcelAttributeResponse>;
+export declare const UpdateParcelResponseSchema: GenMessage<UpdateParcelResponse>;
 
 /**
- * @generated from message civil.public.parcels.v1.GetParcelAttributesRequest
+ * @generated from message civil.public.parcels.v1.GetNumericalParcelStatsByIdRequest
  */
-export declare type GetParcelAttributesRequest = Message<"civil.public.parcels.v1.GetParcelAttributesRequest"> & {
-  /**
-   * @generated from field: string parcel_id = 1;
-   */
-  parcelId: string;
-
-  /**
-   * @generated from field: repeated string attribute_names = 2;
-   */
-  attributeNames: string[];
-};
-
-/**
- * Describes the message civil.public.parcels.v1.GetParcelAttributesRequest.
- * Use `create(GetParcelAttributesRequestSchema)` to create a new message.
- */
-export declare const GetParcelAttributesRequestSchema: GenMessage<GetParcelAttributesRequest>;
-
-/**
- * @generated from message civil.public.parcels.v1.GetParcelAttributesResponse
- */
-export declare type GetParcelAttributesResponse = Message<"civil.public.parcels.v1.GetParcelAttributesResponse"> & {
-  /**
-   * @generated from field: google.protobuf.Struct parcel_attributes = 1;
-   */
-  parcelAttributes?: JsonObject;
-};
-
-/**
- * Describes the message civil.public.parcels.v1.GetParcelAttributesResponse.
- * Use `create(GetParcelAttributesResponseSchema)` to create a new message.
- */
-export declare const GetParcelAttributesResponseSchema: GenMessage<GetParcelAttributesResponse>;
-
-/**
- * @generated from message civil.public.parcels.v1.GetNumericalStatsRequest
- */
-export declare type GetNumericalStatsRequest = Message<"civil.public.parcels.v1.GetNumericalStatsRequest"> & {
+export declare type GetNumericalParcelStatsByIdRequest = Message<"civil.public.parcels.v1.GetNumericalParcelStatsByIdRequest"> & {
   /**
    * @generated from field: repeated string parcel_ids = 1;
    */
@@ -175,15 +355,15 @@ export declare type GetNumericalStatsRequest = Message<"civil.public.parcels.v1.
 };
 
 /**
- * Describes the message civil.public.parcels.v1.GetNumericalStatsRequest.
- * Use `create(GetNumericalStatsRequestSchema)` to create a new message.
+ * Describes the message civil.public.parcels.v1.GetNumericalParcelStatsByIdRequest.
+ * Use `create(GetNumericalParcelStatsByIdRequestSchema)` to create a new message.
  */
-export declare const GetNumericalStatsRequestSchema: GenMessage<GetNumericalStatsRequest>;
+export declare const GetNumericalParcelStatsByIdRequestSchema: GenMessage<GetNumericalParcelStatsByIdRequest>;
 
 /**
- * @generated from message civil.public.parcels.v1.GetNumericalStatsResponse
+ * @generated from message civil.public.parcels.v1.GetNumericalParcelStatsByIdResponse
  */
-export declare type GetNumericalStatsResponse = Message<"civil.public.parcels.v1.GetNumericalStatsResponse"> & {
+export declare type GetNumericalParcelStatsByIdResponse = Message<"civil.public.parcels.v1.GetNumericalParcelStatsByIdResponse"> & {
   /**
    * @generated from field: float mode = 1;
    */
@@ -271,15 +451,15 @@ export declare type GetNumericalStatsResponse = Message<"civil.public.parcels.v1
 };
 
 /**
- * Describes the message civil.public.parcels.v1.GetNumericalStatsResponse.
- * Use `create(GetNumericalStatsResponseSchema)` to create a new message.
+ * Describes the message civil.public.parcels.v1.GetNumericalParcelStatsByIdResponse.
+ * Use `create(GetNumericalParcelStatsByIdResponseSchema)` to create a new message.
  */
-export declare const GetNumericalStatsResponseSchema: GenMessage<GetNumericalStatsResponse>;
+export declare const GetNumericalParcelStatsByIdResponseSchema: GenMessage<GetNumericalParcelStatsByIdResponse>;
 
 /**
- * @generated from message civil.public.parcels.v1.GetCategoricalStatsRequest
+ * @generated from message civil.public.parcels.v1.GetCategoricalParcelStatsByIdRequest
  */
-export declare type GetCategoricalStatsRequest = Message<"civil.public.parcels.v1.GetCategoricalStatsRequest"> & {
+export declare type GetCategoricalParcelStatsByIdRequest = Message<"civil.public.parcels.v1.GetCategoricalParcelStatsByIdRequest"> & {
   /**
    * @generated from field: repeated string parcel_ids = 1;
    */
@@ -297,15 +477,15 @@ export declare type GetCategoricalStatsRequest = Message<"civil.public.parcels.v
 };
 
 /**
- * Describes the message civil.public.parcels.v1.GetCategoricalStatsRequest.
- * Use `create(GetCategoricalStatsRequestSchema)` to create a new message.
+ * Describes the message civil.public.parcels.v1.GetCategoricalParcelStatsByIdRequest.
+ * Use `create(GetCategoricalParcelStatsByIdRequestSchema)` to create a new message.
  */
-export declare const GetCategoricalStatsRequestSchema: GenMessage<GetCategoricalStatsRequest>;
+export declare const GetCategoricalParcelStatsByIdRequestSchema: GenMessage<GetCategoricalParcelStatsByIdRequest>;
 
 /**
- * @generated from message civil.public.parcels.v1.GetCategoricalStatsResponse
+ * @generated from message civil.public.parcels.v1.GetCategoricalParcelStatsByIdResponse
  */
-export declare type GetCategoricalStatsResponse = Message<"civil.public.parcels.v1.GetCategoricalStatsResponse"> & {
+export declare type GetCategoricalParcelStatsByIdResponse = Message<"civil.public.parcels.v1.GetCategoricalParcelStatsByIdResponse"> & {
   /**
    * @generated from field: string mode = 1;
    */
@@ -318,74 +498,52 @@ export declare type GetCategoricalStatsResponse = Message<"civil.public.parcels.
 };
 
 /**
- * Describes the message civil.public.parcels.v1.GetCategoricalStatsResponse.
- * Use `create(GetCategoricalStatsResponseSchema)` to create a new message.
+ * Describes the message civil.public.parcels.v1.GetCategoricalParcelStatsByIdResponse.
+ * Use `create(GetCategoricalParcelStatsByIdResponseSchema)` to create a new message.
  */
-export declare const GetCategoricalStatsResponseSchema: GenMessage<GetCategoricalStatsResponse>;
+export declare const GetCategoricalParcelStatsByIdResponseSchema: GenMessage<GetCategoricalParcelStatsByIdResponse>;
 
 /**
  * @generated from service civil.public.parcels.v1.ParcelsService
  */
 export declare const ParcelsService: GenService<{
   /**
-   * Updates a specified attribute for one or more parcels, identified by their parcel IDs.
-   *
-   * @generated from rpc civil.public.parcels.v1.ParcelsService.UpdateParcelsAttribute
-   */
-  updateParcelsAttribute: {
-    methodKind: "unary";
-    input: typeof UpdateParcelsAttributeRequestSchema;
-    output: typeof UpdateParcelsAttributeResponseSchema;
-  },
-  /**
    * Retrieves all of a specified parcel's attributes as an object.
    *
-   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetParcel
+   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetParcelsById
    */
-  getParcel: {
+  getParcelsById: {
     methodKind: "unary";
-    input: typeof GetParcelRequestSchema;
-    output: typeof GetParcelResponseSchema;
+    input: typeof GetParcelsByIdRequestSchema;
+    output: typeof GetParcelsByIdResponseSchema;
   },
   /**
-   * Retrieves a specified attribute value for a given parcel.
-   *
-   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetParcelAttribute
+   * @generated from rpc civil.public.parcels.v1.ParcelsService.UpdateParcel
    */
-  getParcelAttribute: {
+  updateParcel: {
     methodKind: "unary";
-    input: typeof GetParcelAttributeRequestSchema;
-    output: typeof GetParcelAttributeResponseSchema;
-  },
-  /**
-   * Retrieves specificied attributes about a parcel as an object.
-   *
-   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetParcelAttributes
-   */
-  getParcelAttributes: {
-    methodKind: "unary";
-    input: typeof GetParcelAttributesRequestSchema;
-    output: typeof GetParcelAttributesResponseSchema;
+    input: typeof UpdateParcelRequestSchema;
+    output: typeof UpdateParcelResponseSchema;
   },
   /**
    * Retrieves a set of summary statistics about the specified numerical attribute for a specified list of parcels. Optionally returns the values as well
    *
-   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetNumericalStats
+   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetNumericalParcelStatsById
    */
-  getNumericalStats: {
+  getNumericalParcelStatsById: {
     methodKind: "unary";
-    input: typeof GetNumericalStatsRequestSchema;
-    output: typeof GetNumericalStatsResponseSchema;
+    input: typeof GetNumericalParcelStatsByIdRequestSchema;
+    output: typeof GetNumericalParcelStatsByIdResponseSchema;
   },
   /**
    * Retrieves a set of summary statistics about the specified categorical attribute for a specified list of parcels. Optionally returns the values as well
    *
-   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetCategoricalStats
+   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetCategoricalParcelStatsById
    */
-  getCategoricalStats: {
+  getCategoricalParcelStatsById: {
     methodKind: "unary";
-    input: typeof GetCategoricalStatsRequestSchema;
-    output: typeof GetCategoricalStatsResponseSchema;
+    input: typeof GetCategoricalParcelStatsByIdRequestSchema;
+    output: typeof GetCategoricalParcelStatsByIdResponseSchema;
   },
 }>;
 
