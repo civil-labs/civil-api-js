@@ -170,14 +170,14 @@ export declare type Parcel = Message<"civil.public.parcels.v1.Parcel"> & {
   landAreaSqFt?: number;
 
   /**
-   * @generated from field: optional double frontage_m = 10;
+   * @generated from field: optional double frontage_ft = 10;
    */
-  frontageM?: number;
+  frontageFt?: number;
 
   /**
-   * @generated from field: optional double depth_m = 11;
+   * @generated from field: optional double depth_ft = 11;
    */
-  depthM?: number;
+  depthFt?: number;
 
   /**
    * @generated from field: repeated string zoning_ids = 12;
@@ -205,9 +205,9 @@ export declare type Parcel = Message<"civil.public.parcels.v1.Parcel"> & {
   improvementSummary?: ParcelImprovementsSummary;
 
   /**
-   * @generated from field: string properties = 17;
+   * @generated from field: optional string properties = 17;
    */
-  properties: string;
+  properties?: string;
 };
 
 /**
