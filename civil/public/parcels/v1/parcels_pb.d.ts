@@ -130,34 +130,34 @@ export declare type Parcel = Message<"civil.public.parcels.v1.Parcel"> & {
   parcelId: string;
 
   /**
-   * @generated from field: string address = 2;
+   * @generated from field: optional string address = 2;
    */
-  address: string;
+  address?: string;
 
   /**
-   * @generated from field: string address_id = 3;
+   * @generated from field: optional string address_id = 3;
    */
-  addressId: string;
+  addressId?: string;
 
   /**
-   * @generated from field: string owner_name = 4;
+   * @generated from field: optional string owner_name = 4;
    */
-  ownerName: string;
+  ownerName?: string;
 
   /**
-   * @generated from field: string owner_address = 5;
+   * @generated from field: optional string owner_address = 5;
    */
-  ownerAddress: string;
+  ownerAddress?: string;
 
   /**
-   * @generated from field: string owner_id = 6;
+   * @generated from field: optional string owner_id = 6;
    */
-  ownerId: string;
+  ownerId?: string;
 
   /**
-   * @generated from field: string land_use_id = 7;
+   * @generated from field: optional string land_use_id = 7;
    */
-  landUseId: string;
+  landUseId?: string;
 
   /**
    * @generated from field: optional string neighborhood_id = 8;
