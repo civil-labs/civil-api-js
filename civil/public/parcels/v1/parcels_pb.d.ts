@@ -2,7 +2,7 @@
 // @generated from file civil/public/parcels/v1/parcels.proto (package civil.public.parcels.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { Timestamp } from "@bufbuild/protobuf/wkt";
 
@@ -350,35 +350,46 @@ export declare type UpdateParcelResponse = Message<"civil.public.parcels.v1.Upda
 export declare const UpdateParcelResponseSchema: GenMessage<UpdateParcelResponse>;
 
 /**
- * @generated from message civil.public.parcels.v1.GetNumericalParcelStatsByIdRequest
+ * @generated from message civil.public.parcels.v1.GetNumericalParcelAttributeStatsByIdRequest
  */
-export declare type GetNumericalParcelStatsByIdRequest = Message<"civil.public.parcels.v1.GetNumericalParcelStatsByIdRequest"> & {
+export declare type GetNumericalParcelAttributeStatsByIdRequest = Message<"civil.public.parcels.v1.GetNumericalParcelAttributeStatsByIdRequest"> & {
   /**
    * @generated from field: repeated string parcel_ids = 1;
    */
   parcelIds: string[];
 
   /**
-   * @generated from field: string attribute_name = 2;
+   * @generated from field: civil.public.parcels.v1.ParcelAttribute attribute = 2;
    */
-  attributeName: string;
+  attribute: ParcelAttribute;
 
   /**
-   * @generated from field: bool return_values = 3;
+   * The historical or future effective date the user wants to view.
+   * If omitted, defaults to the current time.
+   *
+   * @generated from field: optional google.protobuf.Timestamp legal_as_of = 3;
    */
-  returnValues: boolean;
+  legalAsOf?: Timestamp;
+
+  /**
+   * The time to reset the database state to
+   * If omitted, defaults to the current time.
+   *
+   * @generated from field: optional google.protobuf.Timestamp system_as_of = 4;
+   */
+  systemAsOf?: Timestamp;
 };
 
 /**
- * Describes the message civil.public.parcels.v1.GetNumericalParcelStatsByIdRequest.
- * Use `create(GetNumericalParcelStatsByIdRequestSchema)` to create a new message.
+ * Describes the message civil.public.parcels.v1.GetNumericalParcelAttributeStatsByIdRequest.
+ * Use `create(GetNumericalParcelAttributeStatsByIdRequestSchema)` to create a new message.
  */
-export declare const GetNumericalParcelStatsByIdRequestSchema: GenMessage<GetNumericalParcelStatsByIdRequest>;
+export declare const GetNumericalParcelAttributeStatsByIdRequestSchema: GenMessage<GetNumericalParcelAttributeStatsByIdRequest>;
 
 /**
- * @generated from message civil.public.parcels.v1.GetNumericalParcelStatsByIdResponse
+ * @generated from message civil.public.parcels.v1.GetNumericalParcelAttributeStatsByIdResponse
  */
-export declare type GetNumericalParcelStatsByIdResponse = Message<"civil.public.parcels.v1.GetNumericalParcelStatsByIdResponse"> & {
+export declare type GetNumericalParcelAttributeStatsByIdResponse = Message<"civil.public.parcels.v1.GetNumericalParcelAttributeStatsByIdResponse"> & {
   /**
    * @generated from field: float mode = 1;
    */
@@ -466,41 +477,52 @@ export declare type GetNumericalParcelStatsByIdResponse = Message<"civil.public.
 };
 
 /**
- * Describes the message civil.public.parcels.v1.GetNumericalParcelStatsByIdResponse.
- * Use `create(GetNumericalParcelStatsByIdResponseSchema)` to create a new message.
+ * Describes the message civil.public.parcels.v1.GetNumericalParcelAttributeStatsByIdResponse.
+ * Use `create(GetNumericalParcelAttributeStatsByIdResponseSchema)` to create a new message.
  */
-export declare const GetNumericalParcelStatsByIdResponseSchema: GenMessage<GetNumericalParcelStatsByIdResponse>;
+export declare const GetNumericalParcelAttributeStatsByIdResponseSchema: GenMessage<GetNumericalParcelAttributeStatsByIdResponse>;
 
 /**
- * @generated from message civil.public.parcels.v1.GetCategoricalParcelStatsByIdRequest
+ * @generated from message civil.public.parcels.v1.GetCategoricalAttributeParcelStatsByIdRequest
  */
-export declare type GetCategoricalParcelStatsByIdRequest = Message<"civil.public.parcels.v1.GetCategoricalParcelStatsByIdRequest"> & {
+export declare type GetCategoricalAttributeParcelStatsByIdRequest = Message<"civil.public.parcels.v1.GetCategoricalAttributeParcelStatsByIdRequest"> & {
   /**
    * @generated from field: repeated string parcel_ids = 1;
    */
   parcelIds: string[];
 
   /**
-   * @generated from field: string attribute_name = 2;
+   * @generated from field: civil.public.parcels.v1.ParcelAttribute attribute = 2;
    */
-  attributeName: string;
+  attribute: ParcelAttribute;
 
   /**
-   * @generated from field: bool return_values = 3;
+   * The historical or future effective date the user wants to view.
+   * If omitted, defaults to the current time.
+   *
+   * @generated from field: optional google.protobuf.Timestamp legal_as_of = 3;
    */
-  returnValues: boolean;
+  legalAsOf?: Timestamp;
+
+  /**
+   * The time to reset the database state to
+   * If omitted, defaults to the current time.
+   *
+   * @generated from field: optional google.protobuf.Timestamp system_as_of = 4;
+   */
+  systemAsOf?: Timestamp;
 };
 
 /**
- * Describes the message civil.public.parcels.v1.GetCategoricalParcelStatsByIdRequest.
- * Use `create(GetCategoricalParcelStatsByIdRequestSchema)` to create a new message.
+ * Describes the message civil.public.parcels.v1.GetCategoricalAttributeParcelStatsByIdRequest.
+ * Use `create(GetCategoricalAttributeParcelStatsByIdRequestSchema)` to create a new message.
  */
-export declare const GetCategoricalParcelStatsByIdRequestSchema: GenMessage<GetCategoricalParcelStatsByIdRequest>;
+export declare const GetCategoricalAttributeParcelStatsByIdRequestSchema: GenMessage<GetCategoricalAttributeParcelStatsByIdRequest>;
 
 /**
- * @generated from message civil.public.parcels.v1.GetCategoricalParcelStatsByIdResponse
+ * @generated from message civil.public.parcels.v1.GetCategoricalAttributeParcelStatsByIdResponse
  */
-export declare type GetCategoricalParcelStatsByIdResponse = Message<"civil.public.parcels.v1.GetCategoricalParcelStatsByIdResponse"> & {
+export declare type GetCategoricalAttributeParcelStatsByIdResponse = Message<"civil.public.parcels.v1.GetCategoricalAttributeParcelStatsByIdResponse"> & {
   /**
    * @generated from field: string mode = 1;
    */
@@ -513,10 +535,45 @@ export declare type GetCategoricalParcelStatsByIdResponse = Message<"civil.publi
 };
 
 /**
- * Describes the message civil.public.parcels.v1.GetCategoricalParcelStatsByIdResponse.
- * Use `create(GetCategoricalParcelStatsByIdResponseSchema)` to create a new message.
+ * Describes the message civil.public.parcels.v1.GetCategoricalAttributeParcelStatsByIdResponse.
+ * Use `create(GetCategoricalAttributeParcelStatsByIdResponseSchema)` to create a new message.
  */
-export declare const GetCategoricalParcelStatsByIdResponseSchema: GenMessage<GetCategoricalParcelStatsByIdResponse>;
+export declare const GetCategoricalAttributeParcelStatsByIdResponseSchema: GenMessage<GetCategoricalAttributeParcelStatsByIdResponse>;
+
+/**
+ * @generated from enum civil.public.parcels.v1.ParcelAttribute
+ */
+export enum ParcelAttribute {
+  /**
+   * @generated from enum value: PARCEL_ATTRIBUTE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: PARCEL_ATTRIBUTE_LAND_AREA_SQ_FT = 1;
+   */
+  LAND_AREA_SQ_FT = 1,
+
+  /**
+   * @generated from enum value: PARCEL_ATTRIBUTE_FRONTAGE_FT = 2;
+   */
+  FRONTAGE_FT = 2,
+
+  /**
+   * @generated from enum value: PARCEL_ATTRIBUTE_DEPTH_FT = 3;
+   */
+  DEPTH_FT = 3,
+
+  /**
+   * @generated from enum value: PARCEL_ATTRIBUTE_LAND_USE_ID = 4;
+   */
+  LAND_USE_ID = 4,
+}
+
+/**
+ * Describes the enum civil.public.parcels.v1.ParcelAttribute.
+ */
+export declare const ParcelAttributeSchema: GenEnum<ParcelAttribute>;
 
 /**
  * @generated from service civil.public.parcels.v1.ParcelsService
@@ -543,22 +600,22 @@ export declare const ParcelsService: GenService<{
   /**
    * Retrieves a set of summary statistics about the specified numerical attribute for a specified list of parcels. Optionally returns the values as well
    *
-   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetNumericalParcelStatsById
+   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetNumericalParcelAttributeStatsById
    */
-  getNumericalParcelStatsById: {
+  getNumericalParcelAttributeStatsById: {
     methodKind: "unary";
-    input: typeof GetNumericalParcelStatsByIdRequestSchema;
-    output: typeof GetNumericalParcelStatsByIdResponseSchema;
+    input: typeof GetNumericalParcelAttributeStatsByIdRequestSchema;
+    output: typeof GetNumericalParcelAttributeStatsByIdResponseSchema;
   },
   /**
    * Retrieves a set of summary statistics about the specified categorical attribute for a specified list of parcels. Optionally returns the values as well
    *
-   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetCategoricalParcelStatsById
+   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetCategoricalAttributeParcelStatsById
    */
-  getCategoricalParcelStatsById: {
+  getCategoricalAttributeParcelStatsById: {
     methodKind: "unary";
-    input: typeof GetCategoricalParcelStatsByIdRequestSchema;
-    output: typeof GetCategoricalParcelStatsByIdResponseSchema;
+    input: typeof GetCategoricalAttributeParcelStatsByIdRequestSchema;
+    output: typeof GetCategoricalAttributeParcelStatsByIdResponseSchema;
   },
 }>;
 

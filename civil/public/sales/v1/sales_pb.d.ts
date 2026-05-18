@@ -31,44 +31,29 @@ export declare type Sale = Message<"civil.public.sales.v1.Sale"> & {
   salePrice: string;
 
   /**
-   * @generated from field: string sale_deed_book = 4;
+   * @generated from field: optional string seller_name = 4;
    */
-  saleDeedBook: string;
+  sellerName?: string;
 
   /**
-   * @generated from field: string sale_deed_page = 5;
+   * @generated from field: optional string seller_address = 5;
    */
-  saleDeedPage: string;
+  sellerAddress?: string;
 
   /**
-   * @generated from field: string sale_deed_uri = 6;
-   */
-  saleDeedUri: string;
-
-  /**
-   * @generated from field: string seller_name = 7;
-   */
-  sellerName: string;
-
-  /**
-   * @generated from field: string seller_address = 8;
-   */
-  sellerAddress: string;
-
-  /**
-   * @generated from field: string seller_id = 9;
+   * @generated from field: string seller_id = 6;
    */
   sellerId: string;
 
   /**
-   * @generated from field: string buyer_name = 10;
+   * @generated from field: optional string buyer_name = 7;
    */
-  buyerName: string;
+  buyerName?: string;
 
   /**
-   * @generated from field: string buyer_address = 11;
+   * @generated from field: optional string buyer_address = 8;
    */
-  buyerAddress: string;
+  buyerAddress?: string;
 
   /**
    * @generated from field: string buyer_id = 12;
@@ -86,6 +71,11 @@ export declare const SaleSchema: GenMessage<Sale>;
  * @generated from message civil.public.sales.v1.GetSalesByParcelIdRequest
  */
 export declare type GetSalesByParcelIdRequest = Message<"civil.public.sales.v1.GetSalesByParcelIdRequest"> & {
+  /**
+   * @generated from field: repeated string parcel_ids = 1;
+   */
+  parcelIds: string[];
+
   /**
    * @generated from field: optional google.protobuf.Timestamp system_as_of = 3;
    */
