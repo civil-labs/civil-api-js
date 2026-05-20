@@ -483,9 +483,9 @@ export declare type GetNumericalParcelAttributeStatsByIdResponse = Message<"civi
 export declare const GetNumericalParcelAttributeStatsByIdResponseSchema: GenMessage<GetNumericalParcelAttributeStatsByIdResponse>;
 
 /**
- * @generated from message civil.public.parcels.v1.GetCategoricalAttributeParcelStatsByIdRequest
+ * @generated from message civil.public.parcels.v1.GetCategoricalParcelAttributeStatsByIdRequest
  */
-export declare type GetCategoricalAttributeParcelStatsByIdRequest = Message<"civil.public.parcels.v1.GetCategoricalAttributeParcelStatsByIdRequest"> & {
+export declare type GetCategoricalParcelAttributeStatsByIdRequest = Message<"civil.public.parcels.v1.GetCategoricalParcelAttributeStatsByIdRequest"> & {
   /**
    * @generated from field: repeated string parcel_ids = 1;
    */
@@ -514,15 +514,15 @@ export declare type GetCategoricalAttributeParcelStatsByIdRequest = Message<"civ
 };
 
 /**
- * Describes the message civil.public.parcels.v1.GetCategoricalAttributeParcelStatsByIdRequest.
- * Use `create(GetCategoricalAttributeParcelStatsByIdRequestSchema)` to create a new message.
+ * Describes the message civil.public.parcels.v1.GetCategoricalParcelAttributeStatsByIdRequest.
+ * Use `create(GetCategoricalParcelAttributeStatsByIdRequestSchema)` to create a new message.
  */
-export declare const GetCategoricalAttributeParcelStatsByIdRequestSchema: GenMessage<GetCategoricalAttributeParcelStatsByIdRequest>;
+export declare const GetCategoricalParcelAttributeStatsByIdRequestSchema: GenMessage<GetCategoricalParcelAttributeStatsByIdRequest>;
 
 /**
- * @generated from message civil.public.parcels.v1.GetCategoricalAttributeParcelStatsByIdResponse
+ * @generated from message civil.public.parcels.v1.GetCategoricalParcelAttributeStatsByIdResponse
  */
-export declare type GetCategoricalAttributeParcelStatsByIdResponse = Message<"civil.public.parcels.v1.GetCategoricalAttributeParcelStatsByIdResponse"> & {
+export declare type GetCategoricalParcelAttributeStatsByIdResponse = Message<"civil.public.parcels.v1.GetCategoricalParcelAttributeStatsByIdResponse"> & {
   /**
    * @generated from field: string mode = 1;
    */
@@ -535,10 +535,10 @@ export declare type GetCategoricalAttributeParcelStatsByIdResponse = Message<"ci
 };
 
 /**
- * Describes the message civil.public.parcels.v1.GetCategoricalAttributeParcelStatsByIdResponse.
- * Use `create(GetCategoricalAttributeParcelStatsByIdResponseSchema)` to create a new message.
+ * Describes the message civil.public.parcels.v1.GetCategoricalParcelAttributeStatsByIdResponse.
+ * Use `create(GetCategoricalParcelAttributeStatsByIdResponseSchema)` to create a new message.
  */
-export declare const GetCategoricalAttributeParcelStatsByIdResponseSchema: GenMessage<GetCategoricalAttributeParcelStatsByIdResponse>;
+export declare const GetCategoricalParcelAttributeStatsByIdResponseSchema: GenMessage<GetCategoricalParcelAttributeStatsByIdResponse>;
 
 /**
  * @generated from enum civil.public.parcels.v1.ParcelAttribute
@@ -610,12 +610,12 @@ export declare const ParcelsService: GenService<{
   /**
    * Retrieves a set of summary statistics about the specified categorical attribute for a specified list of parcels. Optionally returns the values as well
    *
-   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetCategoricalAttributeParcelStatsById
+   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetCategoricalParcelAttributeStatsById
    */
-  getCategoricalAttributeParcelStatsById: {
+  getCategoricalParcelAttributeStatsById: {
     methodKind: "unary";
-    input: typeof GetCategoricalAttributeParcelStatsByIdRequestSchema;
-    output: typeof GetCategoricalAttributeParcelStatsByIdResponseSchema;
+    input: typeof GetCategoricalParcelAttributeStatsByIdRequestSchema;
+    output: typeof GetCategoricalParcelAttributeStatsByIdResponseSchema;
   },
 }>;
 
