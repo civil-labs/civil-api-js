@@ -48,16 +48,6 @@ export declare type Client = Message<"civil.public.dex.v1.Client"> & {
    * @generated from field: string logo_url = 7;
    */
   logoUrl: string;
-
-  /**
-   * @generated from field: repeated string allowed_connectors = 8;
-   */
-  allowedConnectors: string[];
-
-  /**
-   * @generated from field: repeated string sso_shared_with = 9;
-   */
-  ssoSharedWith: string[];
 };
 
 /**
@@ -101,16 +91,6 @@ export declare type ClientInfo = Message<"civil.public.dex.v1.ClientInfo"> & {
    * @generated from field: string logo_url = 6;
    */
   logoUrl: string;
-
-  /**
-   * @generated from field: repeated string allowed_connectors = 7;
-   */
-  allowedConnectors: string[];
-
-  /**
-   * @generated from field: repeated string sso_shared_with = 8;
-   */
-  ssoSharedWith: string[];
 };
 
 /**
@@ -266,16 +246,6 @@ export declare type UpdateClientRequest = Message<"civil.public.dex.v1.UpdateCli
    * @generated from field: string logo_url = 5;
    */
   logoUrl: string;
-
-  /**
-   * @generated from field: repeated string allowed_connectors = 6;
-   */
-  allowedConnectors: string[];
-
-  /**
-   * @generated from field: repeated string sso_shared_with = 7;
-   */
-  ssoSharedWith: string[];
 };
 
 /**
@@ -333,48 +303,6 @@ export declare type ListClientsResponse = Message<"civil.public.dex.v1.ListClien
  * Use `create(ListClientsResponseSchema)` to create a new message.
  */
 export declare const ListClientsResponseSchema: GenMessage<ListClientsResponse>;
-
-/**
- * VersionReq is a request to fetch version info.
- *
- * @generated from message civil.public.dex.v1.GetVersionRequest
- */
-export declare type GetVersionRequest = Message<"civil.public.dex.v1.GetVersionRequest"> & {
-};
-
-/**
- * Describes the message civil.public.dex.v1.GetVersionRequest.
- * Use `create(GetVersionRequestSchema)` to create a new message.
- */
-export declare const GetVersionRequestSchema: GenMessage<GetVersionRequest>;
-
-/**
- * VersionResp holds the version info of components.
- *
- * @generated from message civil.public.dex.v1.GetVersionResponse
- */
-export declare type GetVersionResponse = Message<"civil.public.dex.v1.GetVersionResponse"> & {
-  /**
-   * Semantic version of the server.
-   *
-   * @generated from field: string server = 1;
-   */
-  server: string;
-
-  /**
-   * Numeric version of the API. It increases every time a new call is added to the API.
-   * Clients should use this info to determine if the server supports specific features.
-   *
-   * @generated from field: int32 api = 2;
-   */
-  api: number;
-};
-
-/**
- * Describes the message civil.public.dex.v1.GetVersionResponse.
- * Use `create(GetVersionResponseSchema)` to create a new message.
- */
-export declare const GetVersionResponseSchema: GenMessage<GetVersionResponse>;
 
 /**
  * RefreshTokenRef contains the metadata for a refresh token that is managed by the storage.
@@ -547,16 +475,6 @@ export declare const DexService: GenService<{
     methodKind: "unary";
     input: typeof ListClientsRequestSchema;
     output: typeof ListClientsResponseSchema;
-  },
-  /**
-   * GetVersion returns version information of the server.
-   *
-   * @generated from rpc civil.public.dex.v1.DexService.GetVersion
-   */
-  getVersion: {
-    methodKind: "unary";
-    input: typeof GetVersionRequestSchema;
-    output: typeof GetVersionResponseSchema;
   },
   /**
    * ListRefresh lists all the refresh token entries for a particular user.
