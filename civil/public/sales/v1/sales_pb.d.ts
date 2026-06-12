@@ -5,6 +5,7 @@
 import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { Timestamp } from "@bufbuild/protobuf/wkt";
+import type { Interval } from "../../../../google/type/interval_pb";
 
 /**
  * Describes the file civil/public/sales/v1/sales.proto.
@@ -72,9 +73,9 @@ export declare const SaleSchema: GenMessage<Sale>;
  */
 export declare type GetSalesByParcelIdRequest = Message<"civil.public.sales.v1.GetSalesByParcelIdRequest"> & {
   /**
-   * @generated from field: repeated string parcel_ids = 1;
+   * @generated from field: string parcel_id = 1;
    */
-  parcelIds: string[];
+  parcelId: string;
 
   /**
    * @generated from field: optional google.protobuf.Timestamp system_as_of = 3;
@@ -92,6 +93,10 @@ export declare const GetSalesByParcelIdRequestSchema: GenMessage<GetSalesByParce
  * @generated from message civil.public.sales.v1.GetSalesByParcelIdResponse
  */
 export declare type GetSalesByParcelIdResponse = Message<"civil.public.sales.v1.GetSalesByParcelIdResponse"> & {
+  /**
+   * @generated from field: repeated civil.public.sales.v1.Sale sales = 1;
+   */
+  sales: Sale[];
 };
 
 /**
@@ -104,6 +109,25 @@ export declare const GetSalesByParcelIdResponseSchema: GenMessage<GetSalesByParc
  * @generated from message civil.public.sales.v1.GetSalesByPolygonRequest
  */
 export declare type GetSalesByPolygonRequest = Message<"civil.public.sales.v1.GetSalesByPolygonRequest"> & {
+  /**
+   * @generated from field: string wkt_polygon = 1;
+   */
+  wktPolygon: string;
+
+  /**
+   * @generated from field: google.type.Interval time_range = 2;
+   */
+  timeRange?: Interval;
+
+  /**
+   * @generated from field: string min_sale_price = 3;
+   */
+  minSalePrice: string;
+
+  /**
+   * @generated from field: string max_sale_price = 4;
+   */
+  maxSalePrice: string;
 };
 
 /**
@@ -116,6 +140,10 @@ export declare const GetSalesByPolygonRequestSchema: GenMessage<GetSalesByPolygo
  * @generated from message civil.public.sales.v1.GetSalesByPolygonResponse
  */
 export declare type GetSalesByPolygonResponse = Message<"civil.public.sales.v1.GetSalesByPolygonResponse"> & {
+  /**
+   * @generated from field: repeated civil.public.sales.v1.Sale sales = 1;
+   */
+  sales: Sale[];
 };
 
 /**
