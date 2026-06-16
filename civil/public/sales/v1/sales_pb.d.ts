@@ -57,7 +57,7 @@ export declare type Sale = Message<"civil.public.sales.v1.Sale"> & {
   buyerAddress?: string;
 
   /**
-   * @generated from field: string buyer_id = 12;
+   * @generated from field: string buyer_id = 9;
    */
   buyerId: string;
 };

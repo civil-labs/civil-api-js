@@ -301,44 +301,34 @@ export declare type UpdateParcelRequest = Message<"civil.public.parcels.v1.Updat
   parcelId: string;
 
   /**
-   * @generated from field: optional double land_area_sq_ft = 2;
-   */
-  landAreaSqFt?: number;
-
-  /**
-   * @generated from field: optional string market_land_value = 3;
-   */
-  marketLandValue?: string;
-
-  /**
-   * @generated from field: optional string assessed_land_value = 4;
-   */
-  assessedLandValue?: string;
-
-  /**
-   * @generated from field: optional string address_id = 5;
+   * @generated from field: optional string address_id = 2;
    */
   addressId?: string;
 
   /**
-   * @generated from field: optional string owner_id = 6;
-   */
-  ownerId?: string;
-
-  /**
-   * @generated from field: optional string land_use_id = 7;
+   * @generated from field: optional string land_use_id = 3;
    */
   landUseId?: string;
 
   /**
-   * @generated from field: optional string neighborhood_id = 8;
+   * @generated from field: optional double land_area_sq_ft = 4;
    */
-  neighborhoodId?: string;
+  landAreaSqFt?: number;
 
   /**
-   * @generated from field: optional string market_area_id = 9;
+   * @generated from field: optional double frontage_ft = 5;
    */
-  marketAreaId?: string;
+  frontageFt?: number;
+
+  /**
+   * @generated from field: optional double depth_ft = 6;
+   */
+  depthFt?: number;
+
+  /**
+   * @generated from field: optional string properties = 7;
+   */
+  properties?: string;
 };
 
 /**
