@@ -5,6 +5,7 @@
 import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { Timestamp } from "@bufbuild/protobuf/wkt";
+import type { Interval } from "../../../../google/type/interval_pb";
 
 /**
  * Describes the file civil/public/parcels/v1/parcels.proto.
@@ -145,9 +146,9 @@ export declare type Parcel = Message<"civil.public.parcels.v1.Parcel"> & {
   parcelId: string;
 
   /**
-   * @generated from field: optional string address = 2;
+   * @generated from field: optional string formatted_address = 2;
    */
-  address?: string;
+  formattedAddress?: string;
 
   /**
    * @generated from field: optional string address_id = 3;
@@ -541,6 +542,219 @@ export declare type GetCategoricalParcelAttributeStatsByIdResponse = Message<"ci
 export declare const GetCategoricalParcelAttributeStatsByIdResponseSchema: GenMessage<GetCategoricalParcelAttributeStatsByIdResponse>;
 
 /**
+ * @generated from message civil.public.parcels.v1.ComparableCriteria
+ */
+export declare type ComparableCriteria = Message<"civil.public.parcels.v1.ComparableCriteria"> & {
+  /**
+   * @generated from field: civil.public.parcels.v1.ParcelAttribute attribute = 1;
+   */
+  attribute: ParcelAttribute;
+
+  /**
+   * @generated from field: optional double numerical_tolerance = 2;
+   */
+  numericalTolerance?: number;
+
+  /**
+   * @generated from field: repeated string categorical_tolerance = 3;
+   */
+  categoricalTolerance: string[];
+};
+
+/**
+ * Describes the message civil.public.parcels.v1.ComparableCriteria.
+ * Use `create(ComparableCriteriaSchema)` to create a new message.
+ */
+export declare const ComparableCriteriaSchema: GenMessage<ComparableCriteria>;
+
+/**
+ * @generated from message civil.public.parcels.v1.ComparableAttribute
+ */
+export declare type ComparableAttribute = Message<"civil.public.parcels.v1.ComparableAttribute"> & {
+  /**
+   * @generated from field: civil.public.parcels.v1.ParcelAttribute attribute = 1;
+   */
+  attribute: ParcelAttribute;
+
+  /**
+   * @generated from field: optional double numerical_value = 2;
+   */
+  numericalValue?: number;
+
+  /**
+   * @generated from field: optional string categorical_value = 3;
+   */
+  categoricalValue?: string;
+};
+
+/**
+ * Describes the message civil.public.parcels.v1.ComparableAttribute.
+ * Use `create(ComparableAttributeSchema)` to create a new message.
+ */
+export declare const ComparableAttributeSchema: GenMessage<ComparableAttribute>;
+
+/**
+ * @generated from message civil.public.parcels.v1.EquityComparableParcel
+ */
+export declare type EquityComparableParcel = Message<"civil.public.parcels.v1.EquityComparableParcel"> & {
+  /**
+   * @generated from field: string parcel_id = 1;
+   */
+  parcelId: string;
+
+  /**
+   * @generated from field: string address_id = 2;
+   */
+  addressId: string;
+
+  /**
+   * @generated from field: string formatted_address = 3;
+   */
+  formattedAddress: string;
+
+  /**
+   * @generated from field: repeated civil.public.parcels.v1.ComparableAttribute attributes = 4;
+   */
+  attributes: ComparableAttribute[];
+};
+
+/**
+ * Describes the message civil.public.parcels.v1.EquityComparableParcel.
+ * Use `create(EquityComparableParcelSchema)` to create a new message.
+ */
+export declare const EquityComparableParcelSchema: GenMessage<EquityComparableParcel>;
+
+/**
+ * @generated from message civil.public.parcels.v1.SaleComparableParcel
+ */
+export declare type SaleComparableParcel = Message<"civil.public.parcels.v1.SaleComparableParcel"> & {
+  /**
+   * @generated from field: string parcel_id = 1;
+   */
+  parcelId: string;
+
+  /**
+   * @generated from field: string address_id = 2;
+   */
+  addressId: string;
+
+  /**
+   * @generated from field: string formatted_address = 3;
+   */
+  formattedAddress: string;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp sale_time = 4;
+   */
+  saleTime?: Timestamp;
+
+  /**
+   * @generated from field: string sale_price = 5;
+   */
+  salePrice: string;
+
+  /**
+   * @generated from field: repeated civil.public.parcels.v1.ComparableAttribute attributes = 6;
+   */
+  attributes: ComparableAttribute[];
+};
+
+/**
+ * Describes the message civil.public.parcels.v1.SaleComparableParcel.
+ * Use `create(SaleComparableParcelSchema)` to create a new message.
+ */
+export declare const SaleComparableParcelSchema: GenMessage<SaleComparableParcel>;
+
+/**
+ * @generated from message civil.public.parcels.v1.GetEquityComparablesRequest
+ */
+export declare type GetEquityComparablesRequest = Message<"civil.public.parcels.v1.GetEquityComparablesRequest"> & {
+  /**
+   * @generated from field: string wkt_polygon = 1;
+   */
+  wktPolygon: string;
+
+  /**
+   * @generated from field: repeated civil.public.parcels.v1.ComparableCriteria criteria = 2;
+   */
+  criteria: ComparableCriteria[];
+
+  /**
+   * @generated from field: repeated string selected_parcel_ids = 3;
+   */
+  selectedParcelIds: string[];
+};
+
+/**
+ * Describes the message civil.public.parcels.v1.GetEquityComparablesRequest.
+ * Use `create(GetEquityComparablesRequestSchema)` to create a new message.
+ */
+export declare const GetEquityComparablesRequestSchema: GenMessage<GetEquityComparablesRequest>;
+
+/**
+ * @generated from message civil.public.parcels.v1.GetEquityComparablesResponse
+ */
+export declare type GetEquityComparablesResponse = Message<"civil.public.parcels.v1.GetEquityComparablesResponse"> & {
+  /**
+   * @generated from field: map<string, civil.public.parcels.v1.EquityComparableParcel> parcels = 1;
+   */
+  parcels: { [key: string]: EquityComparableParcel };
+};
+
+/**
+ * Describes the message civil.public.parcels.v1.GetEquityComparablesResponse.
+ * Use `create(GetEquityComparablesResponseSchema)` to create a new message.
+ */
+export declare const GetEquityComparablesResponseSchema: GenMessage<GetEquityComparablesResponse>;
+
+/**
+ * @generated from message civil.public.parcels.v1.GetSalesComparablesRequest
+ */
+export declare type GetSalesComparablesRequest = Message<"civil.public.parcels.v1.GetSalesComparablesRequest"> & {
+  /**
+   * @generated from field: string wkt_polygon = 1;
+   */
+  wktPolygon: string;
+
+  /**
+   * @generated from field: repeated civil.public.parcels.v1.ComparableCriteria criteria = 2;
+   */
+  criteria: ComparableCriteria[];
+
+  /**
+   * @generated from field: repeated string selected_parcel_ids = 3;
+   */
+  selectedParcelIds: string[];
+
+  /**
+   * @generated from field: google.type.Interval time_range = 4;
+   */
+  timeRange?: Interval;
+};
+
+/**
+ * Describes the message civil.public.parcels.v1.GetSalesComparablesRequest.
+ * Use `create(GetSalesComparablesRequestSchema)` to create a new message.
+ */
+export declare const GetSalesComparablesRequestSchema: GenMessage<GetSalesComparablesRequest>;
+
+/**
+ * @generated from message civil.public.parcels.v1.GetSalesComparablesResponse
+ */
+export declare type GetSalesComparablesResponse = Message<"civil.public.parcels.v1.GetSalesComparablesResponse"> & {
+  /**
+   * @generated from field: map<string, civil.public.parcels.v1.SaleComparableParcel> parcels = 1;
+   */
+  parcels: { [key: string]: SaleComparableParcel };
+};
+
+/**
+ * Describes the message civil.public.parcels.v1.GetSalesComparablesResponse.
+ * Use `create(GetSalesComparablesResponseSchema)` to create a new message.
+ */
+export declare const GetSalesComparablesResponseSchema: GenMessage<GetSalesComparablesResponse>;
+
+/**
  * @generated from enum civil.public.parcels.v1.ParcelAttribute
  */
 export enum ParcelAttribute {
@@ -568,6 +782,46 @@ export enum ParcelAttribute {
    * @generated from enum value: PARCEL_ATTRIBUTE_LAND_USE_ID = 4;
    */
   LAND_USE_ID = 4,
+
+  /**
+   * @generated from enum value: PARCEL_ATTRIBUTE_ZONING_ID = 5;
+   */
+  ZONING_ID = 5,
+
+  /**
+   * @generated from enum value: PARCEL_ATTRIBUTE_IMPROVEMENT_AREA_SQ_FT = 6;
+   */
+  IMPROVEMENT_AREA_SQ_FT = 6,
+
+  /**
+   * @generated from enum value: PARCEL_ATTRIBUTE_IMPROVEMENT_YEAR = 7;
+   */
+  IMPROVEMENT_YEAR = 7,
+
+  /**
+   * @generated from enum value: PARCEL_ATTRIBUTE_BEDROOMS = 8;
+   */
+  BEDROOMS = 8,
+
+  /**
+   * @generated from enum value: PARCEL_ATTRIBUTE_BATHROOMS = 9;
+   */
+  BATHROOMS = 9,
+
+  /**
+   * @generated from enum value: PARCEL_ATTRIBUTE_UNITS = 10;
+   */
+  UNITS = 10,
+
+  /**
+   * @generated from enum value: PARCEL_ATTRIBUTE_CONDITION_ID = 11;
+   */
+  CONDITION_ID = 11,
+
+  /**
+   * @generated from enum value: PARCEL_ATTRIBUTE_IMPROVEMENT_TYPE_ID = 12;
+   */
+  IMPROVEMENT_TYPE_ID = 12,
 }
 
 /**
