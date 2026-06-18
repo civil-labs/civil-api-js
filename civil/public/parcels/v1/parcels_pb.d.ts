@@ -871,5 +871,21 @@ export declare const ParcelsService: GenService<{
     input: typeof GetCategoricalParcelAttributeStatsByIdRequestSchema;
     output: typeof GetCategoricalParcelAttributeStatsByIdResponseSchema;
   },
+  /**
+   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetEquityComparables
+   */
+  getEquityComparables: {
+    methodKind: "unary";
+    input: typeof GetEquityComparablesRequestSchema;
+    output: typeof GetEquityComparablesResponseSchema;
+  },
+  /**
+   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetSalesComparables
+   */
+  getSalesComparables: {
+    methodKind: "unary";
+    input: typeof GetSalesComparablesRequestSchema;
+    output: typeof GetSalesComparablesResponseSchema;
+  },
 }>;
 
