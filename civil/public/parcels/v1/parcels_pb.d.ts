@@ -551,12 +551,17 @@ export declare type ComparableCriteria = Message<"civil.public.parcels.v1.Compar
   attribute: ParcelAttribute;
 
   /**
-   * @generated from field: optional double numerical_tolerance = 2;
+   * @generated from field: optional double min_numerical_tolerance = 2;
    */
-  numericalTolerance?: number;
+  minNumericalTolerance?: number;
 
   /**
-   * @generated from field: repeated string categorical_tolerance = 3;
+   * @generated from field: optional double max_numerical_tolerance = 3;
+   */
+  maxNumericalTolerance?: number;
+
+  /**
+   * @generated from field: repeated string categorical_tolerance = 4;
    */
   categoricalTolerance: string[];
 };
@@ -794,34 +799,39 @@ export enum ParcelAttribute {
   IMPROVEMENT_AREA_SQ_FT = 6,
 
   /**
-   * @generated from enum value: PARCEL_ATTRIBUTE_IMPROVEMENT_YEAR = 7;
+   * @generated from enum value: PARCEL_ATTRIBUTE_IMPROVEMENT_YEAR_BUILT = 7;
    */
-  IMPROVEMENT_YEAR = 7,
+  IMPROVEMENT_YEAR_BUILT = 7,
 
   /**
-   * @generated from enum value: PARCEL_ATTRIBUTE_BEDROOMS = 8;
+   * @generated from enum value: PARCEL_ATTRIBUTE_IMPROVEMENT_EFFECTIVE_YEAR_BUILT = 8;
    */
-  BEDROOMS = 8,
+  IMPROVEMENT_EFFECTIVE_YEAR_BUILT = 8,
 
   /**
-   * @generated from enum value: PARCEL_ATTRIBUTE_BATHROOMS = 9;
+   * @generated from enum value: PARCEL_ATTRIBUTE_BEDROOMS = 9;
    */
-  BATHROOMS = 9,
+  BEDROOMS = 9,
 
   /**
-   * @generated from enum value: PARCEL_ATTRIBUTE_UNITS = 10;
+   * @generated from enum value: PARCEL_ATTRIBUTE_BATHROOMS = 10;
    */
-  UNITS = 10,
+  BATHROOMS = 10,
 
   /**
-   * @generated from enum value: PARCEL_ATTRIBUTE_CONDITION_ID = 11;
+   * @generated from enum value: PARCEL_ATTRIBUTE_UNITS = 11;
    */
-  CONDITION_ID = 11,
+  UNITS = 11,
 
   /**
-   * @generated from enum value: PARCEL_ATTRIBUTE_IMPROVEMENT_TYPE_ID = 12;
+   * @generated from enum value: PARCEL_ATTRIBUTE_CONDITION_ID = 12;
    */
-  IMPROVEMENT_TYPE_ID = 12,
+  CONDITION_ID = 12,
+
+  /**
+   * @generated from enum value: PARCEL_ATTRIBUTE_IMPROVEMENT_TYPE_ID = 13;
+   */
+  IMPROVEMENT_TYPE_ID = 13,
 }
 
 /**
