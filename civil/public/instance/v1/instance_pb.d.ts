@@ -30,6 +30,11 @@ export declare type GetInstanceMetadataResponse = Message<"civil.public.instance
    * @generated from field: google.protobuf.Struct metadata = 1;
    */
   metadata?: JsonObject;
+
+  /**
+   * @generated from field: string auth_issuer_url = 2;
+   */
+  authIssuerUrl: string;
 };
 
 /**
