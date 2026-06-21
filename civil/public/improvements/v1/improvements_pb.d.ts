@@ -86,9 +86,9 @@ export declare type ImprovementCondition = Message<"civil.public.improvements.v1
   /**
    * Set to optional to allow it to properly pass zero values
    *
-   * @generated from field: optional float depcreciation_modifier = 3;
+   * @generated from field: optional float depreciation_modifier = 3;
    */
-  depcreciationModifier?: number;
+  depreciationModifier?: number;
 };
 
 /**
