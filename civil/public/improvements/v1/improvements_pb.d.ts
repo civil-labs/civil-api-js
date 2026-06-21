@@ -124,11 +124,11 @@ export declare type GetImprovementConditionsResponse = Message<"civil.public.imp
 export declare const GetImprovementConditionsResponseSchema: GenMessage<GetImprovementConditionsResponse>;
 
 /**
- * @generated from service civil.public.improvements.v1.ImprovementService
+ * @generated from service civil.public.improvements.v1.ImprovementsService
  */
-export declare const ImprovementService: GenService<{
+export declare const ImprovementsService: GenService<{
   /**
-   * @generated from rpc civil.public.improvements.v1.ImprovementService.GetImprovementTypes
+   * @generated from rpc civil.public.improvements.v1.ImprovementsService.GetImprovementTypes
    */
   getImprovementTypes: {
     methodKind: "unary";
@@ -136,7 +136,7 @@ export declare const ImprovementService: GenService<{
     output: typeof GetImprovementTypesResponseSchema;
   },
   /**
-   * @generated from rpc civil.public.improvements.v1.ImprovementService.GetImprovementConditions
+   * @generated from rpc civil.public.improvements.v1.ImprovementsService.GetImprovementConditions
    */
   getImprovementConditions: {
     methodKind: "unary";
