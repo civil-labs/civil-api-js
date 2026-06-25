@@ -765,6 +765,97 @@ export declare type GetSalesComparablesResponse = Message<"civil.public.parcels.
 export declare const GetSalesComparablesResponseSchema: GenMessage<GetSalesComparablesResponse>;
 
 /**
+ * @generated from message civil.public.parcels.v1.SimpleParcel
+ */
+export declare type SimpleParcel = Message<"civil.public.parcels.v1.SimpleParcel"> & {
+  /**
+   * @generated from field: string parcel_id = 1;
+   */
+  parcelId: string;
+
+  /**
+   * @generated from field: int64 feature_id = 2;
+   */
+  featureId: bigint;
+
+  /**
+   * @generated from field: optional string formatted_address = 3;
+   */
+  formattedAddress?: string;
+
+  /**
+   * @generated from field: optional string address_id = 4;
+   */
+  addressId?: string;
+
+  /**
+   * @generated from field: optional string primary_owner_name = 5;
+   */
+  primaryOwnerName?: string;
+
+  /**
+   * @generated from field: optional string primary_owner_address = 6;
+   */
+  primaryOwnerAddress?: string;
+
+  /**
+   * @generated from field: repeated string party_ids = 7;
+   */
+  partyIds: string[];
+
+  /**
+   * @generated from field: optional string land_use_id = 8;
+   */
+  landUseId?: string;
+
+  /**
+   * @generated from field: optional string neighborhood_id = 9;
+   */
+  neighborhoodId?: string;
+
+  /**
+   * @generated from field: optional double land_area_sq_ft = 10;
+   */
+  landAreaSqFt?: number;
+
+  /**
+   * @generated from field: optional double frontage_ft = 11;
+   */
+  frontageFt?: number;
+
+  /**
+   * @generated from field: optional double depth_ft = 12;
+   */
+  depthFt?: number;
+
+  /**
+   * @generated from field: repeated string zoning_ids = 13;
+   */
+  zoningIds: string[];
+
+  /**
+   * @generated from field: optional string market_land_value = 14;
+   */
+  marketLandValue?: string;
+
+  /**
+   * @generated from field: optional string assessed_land_value = 15;
+   */
+  assessedLandValue?: string;
+
+  /**
+   * @generated from field: optional string properties = 17;
+   */
+  properties?: string;
+};
+
+/**
+ * Describes the message civil.public.parcels.v1.SimpleParcel.
+ * Use `create(SimpleParcelSchema)` to create a new message.
+ */
+export declare const SimpleParcelSchema: GenMessage<SimpleParcel>;
+
+/**
  * @generated from message civil.public.parcels.v1.GetParcelByFeatureIdRequest
  */
 export declare type GetParcelByFeatureIdRequest = Message<"civil.public.parcels.v1.GetParcelByFeatureIdRequest"> & {
@@ -795,9 +886,9 @@ export declare const GetParcelByFeatureIdRequestSchema: GenMessage<GetParcelByFe
  */
 export declare type GetParcelByFeatureIdResponse = Message<"civil.public.parcels.v1.GetParcelByFeatureIdResponse"> & {
   /**
-   * @generated from field: civil.public.parcels.v1.Parcel parcel = 1;
+   * @generated from field: civil.public.parcels.v1.SimpleParcel parcel = 1;
    */
-  parcel?: Parcel;
+  parcel?: SimpleParcel;
 };
 
 /**
