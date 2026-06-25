@@ -807,9 +807,9 @@ export declare type GetParcelByFeatureIdResponse = Message<"civil.public.parcels
 export declare const GetParcelByFeatureIdResponseSchema: GenMessage<GetParcelByFeatureIdResponse>;
 
 /**
- * @generated from message civil.public.parcels.v1.GetParcelIdByFeatureIdRequest
+ * @generated from message civil.public.parcels.v1.GetParcelIdsByFeatureIdRequest
  */
-export declare type GetParcelIdByFeatureIdRequest = Message<"civil.public.parcels.v1.GetParcelIdByFeatureIdRequest"> & {
+export declare type GetParcelIdsByFeatureIdRequest = Message<"civil.public.parcels.v1.GetParcelIdsByFeatureIdRequest"> & {
   /**
    * @generated from field: repeated int64 feature_id = 1;
    */
@@ -817,15 +817,15 @@ export declare type GetParcelIdByFeatureIdRequest = Message<"civil.public.parcel
 };
 
 /**
- * Describes the message civil.public.parcels.v1.GetParcelIdByFeatureIdRequest.
- * Use `create(GetParcelIdByFeatureIdRequestSchema)` to create a new message.
+ * Describes the message civil.public.parcels.v1.GetParcelIdsByFeatureIdRequest.
+ * Use `create(GetParcelIdsByFeatureIdRequestSchema)` to create a new message.
  */
-export declare const GetParcelIdByFeatureIdRequestSchema: GenMessage<GetParcelIdByFeatureIdRequest>;
+export declare const GetParcelIdsByFeatureIdRequestSchema: GenMessage<GetParcelIdsByFeatureIdRequest>;
 
 /**
- * @generated from message civil.public.parcels.v1.GetParcelIdByFeatureIdResponse
+ * @generated from message civil.public.parcels.v1.GetParcelIdsByFeatureIdResponse
  */
-export declare type GetParcelIdByFeatureIdResponse = Message<"civil.public.parcels.v1.GetParcelIdByFeatureIdResponse"> & {
+export declare type GetParcelIdsByFeatureIdResponse = Message<"civil.public.parcels.v1.GetParcelIdsByFeatureIdResponse"> & {
   /**
    * @generated from field: map<int64, string> parcel_ids = 1;
    */
@@ -833,10 +833,10 @@ export declare type GetParcelIdByFeatureIdResponse = Message<"civil.public.parce
 };
 
 /**
- * Describes the message civil.public.parcels.v1.GetParcelIdByFeatureIdResponse.
- * Use `create(GetParcelIdByFeatureIdResponseSchema)` to create a new message.
+ * Describes the message civil.public.parcels.v1.GetParcelIdsByFeatureIdResponse.
+ * Use `create(GetParcelIdsByFeatureIdResponseSchema)` to create a new message.
  */
-export declare const GetParcelIdByFeatureIdResponseSchema: GenMessage<GetParcelIdByFeatureIdResponse>;
+export declare const GetParcelIdsByFeatureIdResponseSchema: GenMessage<GetParcelIdsByFeatureIdResponse>;
 
 /**
  * @generated from enum civil.public.parcels.v1.ParcelAttribute
@@ -975,6 +975,22 @@ export declare const ParcelsService: GenService<{
     methodKind: "unary";
     input: typeof GetSalesComparablesRequestSchema;
     output: typeof GetSalesComparablesResponseSchema;
+  },
+  /**
+   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetParcelByFeatureId
+   */
+  getParcelByFeatureId: {
+    methodKind: "unary";
+    input: typeof GetParcelByFeatureIdRequestSchema;
+    output: typeof GetParcelByFeatureIdResponseSchema;
+  },
+  /**
+   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetParcelIdsByFeatureId
+   */
+  getParcelIdsByFeatureId: {
+    methodKind: "unary";
+    input: typeof GetParcelIdsByFeatureIdRequestSchema;
+    output: typeof GetParcelIdsByFeatureIdResponseSchema;
   },
 }>;
 
