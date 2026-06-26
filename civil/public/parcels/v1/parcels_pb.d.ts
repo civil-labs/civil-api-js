@@ -902,9 +902,9 @@ export declare const GetParcelByFeatureIdResponseSchema: GenMessage<GetParcelByF
  */
 export declare type GetParcelIdsByFeatureIdRequest = Message<"civil.public.parcels.v1.GetParcelIdsByFeatureIdRequest"> & {
   /**
-   * @generated from field: repeated int64 feature_id = 1;
+   * @generated from field: repeated int64 feature_ids = 1;
    */
-  featureId: bigint[];
+  featureIds: bigint[];
 };
 
 /**
