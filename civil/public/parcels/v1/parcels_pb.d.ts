@@ -613,17 +613,22 @@ export declare type EquityComparableParcel = Message<"civil.public.parcels.v1.Eq
   parcelId: string;
 
   /**
-   * @generated from field: string address_id = 2;
+   * @generated from field: int64 feature_id = 2;
+   */
+  featureId: bigint;
+
+  /**
+   * @generated from field: string address_id = 3;
    */
   addressId: string;
 
   /**
-   * @generated from field: string formatted_address = 3;
+   * @generated from field: string formatted_address = 4;
    */
   formattedAddress: string;
 
   /**
-   * @generated from field: repeated civil.public.parcels.v1.ComparableAttribute attributes = 4;
+   * @generated from field: repeated civil.public.parcels.v1.ComparableAttribute attributes = 5;
    */
   attributes: ComparableAttribute[];
 };
@@ -644,27 +649,32 @@ export declare type SaleComparableParcel = Message<"civil.public.parcels.v1.Sale
   parcelId: string;
 
   /**
-   * @generated from field: string address_id = 2;
+   * @generated from field: int64 feature_id = 2;
+   */
+  featureId: bigint;
+
+  /**
+   * @generated from field: string address_id = 3;
    */
   addressId: string;
 
   /**
-   * @generated from field: string formatted_address = 3;
+   * @generated from field: string formatted_address = 4;
    */
   formattedAddress: string;
 
   /**
-   * @generated from field: google.protobuf.Timestamp sale_time = 4;
+   * @generated from field: google.protobuf.Timestamp sale_time = 5;
    */
   saleTime?: Timestamp;
 
   /**
-   * @generated from field: string sale_price = 5;
+   * @generated from field: string sale_price = 6;
    */
   salePrice: string;
 
   /**
-   * @generated from field: repeated civil.public.parcels.v1.ComparableAttribute attributes = 6;
+   * @generated from field: repeated civil.public.parcels.v1.ComparableAttribute attributes = 7;
    */
   attributes: ComparableAttribute[];
 };
