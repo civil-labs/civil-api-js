@@ -940,6 +940,49 @@ export declare type GetParcelIdsByFeatureIdResponse = Message<"civil.public.parc
 export declare const GetParcelIdsByFeatureIdResponseSchema: GenMessage<GetParcelIdsByFeatureIdResponse>;
 
 /**
+ * @generated from message civil.public.parcels.v1.GetEstimatedParcelsExtentInWGS84Request
+ */
+export declare type GetEstimatedParcelsExtentInWGS84Request = Message<"civil.public.parcels.v1.GetEstimatedParcelsExtentInWGS84Request"> & {
+};
+
+/**
+ * Describes the message civil.public.parcels.v1.GetEstimatedParcelsExtentInWGS84Request.
+ * Use `create(GetEstimatedParcelsExtentInWGS84RequestSchema)` to create a new message.
+ */
+export declare const GetEstimatedParcelsExtentInWGS84RequestSchema: GenMessage<GetEstimatedParcelsExtentInWGS84Request>;
+
+/**
+ * @generated from message civil.public.parcels.v1.GetEstimatedParcelsExtentInWGS84Response
+ */
+export declare type GetEstimatedParcelsExtentInWGS84Response = Message<"civil.public.parcels.v1.GetEstimatedParcelsExtentInWGS84Response"> & {
+  /**
+   * @generated from field: double min_x = 1;
+   */
+  minX: number;
+
+  /**
+   * @generated from field: double min_y = 2;
+   */
+  minY: number;
+
+  /**
+   * @generated from field: double max_x = 3;
+   */
+  maxX: number;
+
+  /**
+   * @generated from field: double max_y = 4;
+   */
+  maxY: number;
+};
+
+/**
+ * Describes the message civil.public.parcels.v1.GetEstimatedParcelsExtentInWGS84Response.
+ * Use `create(GetEstimatedParcelsExtentInWGS84ResponseSchema)` to create a new message.
+ */
+export declare const GetEstimatedParcelsExtentInWGS84ResponseSchema: GenMessage<GetEstimatedParcelsExtentInWGS84Response>;
+
+/**
  * @generated from enum civil.public.parcels.v1.ParcelAttribute
  */
 export enum ParcelAttribute {
@@ -1092,6 +1135,14 @@ export declare const ParcelsService: GenService<{
     methodKind: "unary";
     input: typeof GetParcelIdsByFeatureIdRequestSchema;
     output: typeof GetParcelIdsByFeatureIdResponseSchema;
+  },
+  /**
+   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetEstimatedParcelsExtentInWGS84
+   */
+  getEstimatedParcelsExtentInWGS84: {
+    methodKind: "unary";
+    input: typeof GetEstimatedParcelsExtentInWGS84RequestSchema;
+    output: typeof GetEstimatedParcelsExtentInWGS84ResponseSchema;
   },
 }>;
 
