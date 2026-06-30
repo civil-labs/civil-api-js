@@ -940,21 +940,21 @@ export declare type GetParcelIdsByFeatureIdResponse = Message<"civil.public.parc
 export declare const GetParcelIdsByFeatureIdResponseSchema: GenMessage<GetParcelIdsByFeatureIdResponse>;
 
 /**
- * @generated from message civil.public.parcels.v1.GetEstimatedParcelsExtentInWGS84Request
+ * @generated from message civil.public.parcels.v1.GetEstimatedParcelsExtentWGS84Request
  */
-export declare type GetEstimatedParcelsExtentInWGS84Request = Message<"civil.public.parcels.v1.GetEstimatedParcelsExtentInWGS84Request"> & {
+export declare type GetEstimatedParcelsExtentWGS84Request = Message<"civil.public.parcels.v1.GetEstimatedParcelsExtentWGS84Request"> & {
 };
 
 /**
- * Describes the message civil.public.parcels.v1.GetEstimatedParcelsExtentInWGS84Request.
- * Use `create(GetEstimatedParcelsExtentInWGS84RequestSchema)` to create a new message.
+ * Describes the message civil.public.parcels.v1.GetEstimatedParcelsExtentWGS84Request.
+ * Use `create(GetEstimatedParcelsExtentWGS84RequestSchema)` to create a new message.
  */
-export declare const GetEstimatedParcelsExtentInWGS84RequestSchema: GenMessage<GetEstimatedParcelsExtentInWGS84Request>;
+export declare const GetEstimatedParcelsExtentWGS84RequestSchema: GenMessage<GetEstimatedParcelsExtentWGS84Request>;
 
 /**
- * @generated from message civil.public.parcels.v1.GetEstimatedParcelsExtentInWGS84Response
+ * @generated from message civil.public.parcels.v1.GetEstimatedParcelsExtentWGS84Response
  */
-export declare type GetEstimatedParcelsExtentInWGS84Response = Message<"civil.public.parcels.v1.GetEstimatedParcelsExtentInWGS84Response"> & {
+export declare type GetEstimatedParcelsExtentWGS84Response = Message<"civil.public.parcels.v1.GetEstimatedParcelsExtentWGS84Response"> & {
   /**
    * @generated from field: double min_x = 1;
    */
@@ -977,10 +977,10 @@ export declare type GetEstimatedParcelsExtentInWGS84Response = Message<"civil.pu
 };
 
 /**
- * Describes the message civil.public.parcels.v1.GetEstimatedParcelsExtentInWGS84Response.
- * Use `create(GetEstimatedParcelsExtentInWGS84ResponseSchema)` to create a new message.
+ * Describes the message civil.public.parcels.v1.GetEstimatedParcelsExtentWGS84Response.
+ * Use `create(GetEstimatedParcelsExtentWGS84ResponseSchema)` to create a new message.
  */
-export declare const GetEstimatedParcelsExtentInWGS84ResponseSchema: GenMessage<GetEstimatedParcelsExtentInWGS84Response>;
+export declare const GetEstimatedParcelsExtentWGS84ResponseSchema: GenMessage<GetEstimatedParcelsExtentWGS84Response>;
 
 /**
  * @generated from enum civil.public.parcels.v1.ParcelAttribute
@@ -1137,12 +1137,12 @@ export declare const ParcelsService: GenService<{
     output: typeof GetParcelIdsByFeatureIdResponseSchema;
   },
   /**
-   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetEstimatedParcelsExtentInWGS84
+   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetEstimatedParcelsExtentWGS84
    */
-  getEstimatedParcelsExtentInWGS84: {
+  getEstimatedParcelsExtentWGS84: {
     methodKind: "unary";
-    input: typeof GetEstimatedParcelsExtentInWGS84RequestSchema;
-    output: typeof GetEstimatedParcelsExtentInWGS84ResponseSchema;
+    input: typeof GetEstimatedParcelsExtentWGS84RequestSchema;
+    output: typeof GetEstimatedParcelsExtentWGS84ResponseSchema;
   },
 }>;
 
