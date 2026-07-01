@@ -69,44 +69,49 @@ export declare type ParcelImprovementsSummary = Message<"civil.public.parcels.v1
   improvementIds: string[];
 
   /**
+   * @generated from field: string primary_improvement_id = 2;
+   */
+  primaryImprovementId: string;
+
+  /**
    * Physically impossible to be negative
    *
-   * @generated from field: double total_area_sq_ft = 2;
+   * @generated from field: double total_area_sq_ft = 3;
    */
   totalAreaSqFt: number;
 
   /**
-   * @generated from field: int32 total_bathrooms = 3;
+   * @generated from field: int32 total_bathrooms = 4;
    */
   totalBathrooms: number;
 
   /**
-   * @generated from field: int32 total_bedrooms = 4;
+   * @generated from field: int32 total_bedrooms = 5;
    */
   totalBedrooms: number;
 
   /**
-   * @generated from field: int32 total_units = 5;
+   * @generated from field: int32 total_units = 6;
    */
   totalUnits: number;
 
   /**
-   * @generated from field: optional int32 primary_year_built = 6;
+   * @generated from field: optional int32 primary_year_built = 7;
    */
   primaryYearBuilt?: number;
 
   /**
-   * @generated from field: optional string primary_condition_id = 7;
+   * @generated from field: optional string primary_condition_id = 8;
    */
   primaryConditionId?: string;
 
   /**
-   * @generated from field: optional string total_market_improvement_value = 8;
+   * @generated from field: optional string total_market_improvement_value = 9;
    */
   totalMarketImprovementValue?: string;
 
   /**
-   * @generated from field: optional string total_assessed_improvement_value = 9;
+   * @generated from field: optional string total_assessed_improvement_value = 10;
    */
   totalAssessedImprovementValue?: string;
 };
