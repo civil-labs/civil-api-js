@@ -249,17 +249,12 @@ export declare type GetParcelsWithImprovementSummaryByParcelIdRequest = Message<
   legalAsOf?: Timestamp;
 
   /**
-   * @generated from field: optional google.protobuf.Timestamp system_as_of = 3;
-   */
-  systemAsOf?: Timestamp;
-
-  /**
-   * @generated from field: optional string valuation_id = 4;
+   * @generated from field: optional string valuation_id = 3;
    */
   valuationId?: string;
 
   /**
-   * @generated from field: optional string neighborhood_definition_id = 5;
+   * @generated from field: optional string neighborhood_definition_id = 4;
    */
   neighborhoodDefinitionId?: string;
 };
@@ -301,17 +296,12 @@ export declare type GetParcelsWithImprovementSummaryByFeatureIdRequest = Message
   legalAsOf?: Timestamp;
 
   /**
-   * @generated from field: optional google.protobuf.Timestamp system_as_of = 3;
-   */
-  systemAsOf?: Timestamp;
-
-  /**
-   * @generated from field: optional string valuation_id = 4;
+   * @generated from field: optional string valuation_id = 3;
    */
   valuationId?: string;
 
   /**
-   * @generated from field: optional string neighborhood_definition_id = 5;
+   * @generated from field: optional string neighborhood_definition_id = 4;
    */
   neighborhoodDefinitionId?: string;
 };
