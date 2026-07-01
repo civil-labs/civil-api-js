@@ -961,12 +961,12 @@ export enum ParcelAttribute {
 export declare const ParcelAttributeSchema: GenEnum<ParcelAttribute>;
 
 /**
+ * Retrieval
+ *
  * @generated from service civil.public.parcels.v1.ParcelsService
  */
 export declare const ParcelsService: GenService<{
   /**
-   * Retrieves all of a specified parcel's attributes as an object.
-   *
    * @generated from rpc civil.public.parcels.v1.ParcelsService.GetParcelsWithImprovementSummaryByParcelId
    */
   getParcelsWithImprovementSummaryByParcelId: {
@@ -975,12 +975,12 @@ export declare const ParcelsService: GenService<{
     output: typeof GetParcelsWithImprovementSummaryByParcelIdResponseSchema;
   },
   /**
-   * @generated from rpc civil.public.parcels.v1.ParcelsService.UpdateParcel
+   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetParcelsWithImprovementSummaryByFeatureId
    */
-  updateParcel: {
+  getParcelsWithImprovementSummaryByFeatureId: {
     methodKind: "unary";
-    input: typeof UpdateParcelRequestSchema;
-    output: typeof UpdateParcelResponseSchema;
+    input: typeof GetParcelsWithImprovementSummaryByFeatureIdRequestSchema;
+    output: typeof GetParcelsWithImprovementSummaryByFeatureIdResponseSchema;
   },
   /**
    * Retrieves a set of summary statistics about the specified numerical attribute for a specified list of parcels. Optionally returns the values as well
@@ -1019,14 +1019,6 @@ export declare const ParcelsService: GenService<{
     output: typeof GetSalesComparablesResponseSchema;
   },
   /**
-   * @generated from rpc civil.public.parcels.v1.ParcelsService.GetParcelsWithImprovementSummaryByFeatureId
-   */
-  getParcelsWithImprovementSummaryByFeatureId: {
-    methodKind: "unary";
-    input: typeof GetParcelsWithImprovementSummaryByFeatureIdRequestSchema;
-    output: typeof GetParcelsWithImprovementSummaryByFeatureIdResponseSchema;
-  },
-  /**
    * @generated from rpc civil.public.parcels.v1.ParcelsService.GetParcelIdsByFeatureId
    */
   getParcelIdsByFeatureId: {
@@ -1041,6 +1033,14 @@ export declare const ParcelsService: GenService<{
     methodKind: "unary";
     input: typeof GetEstimatedParcelsExtentWGS84RequestSchema;
     output: typeof GetEstimatedParcelsExtentWGS84ResponseSchema;
+  },
+  /**
+   * @generated from rpc civil.public.parcels.v1.ParcelsService.UpdateParcel
+   */
+  updateParcel: {
+    methodKind: "unary";
+    input: typeof UpdateParcelRequestSchema;
+    output: typeof UpdateParcelResponseSchema;
   },
 }>;
 
