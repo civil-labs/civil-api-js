@@ -708,6 +708,11 @@ export declare type SaleComparableParcel = Message<"civil.public.parcels.v1.Sale
    * @generated from field: repeated civil.public.parcels.v1.ComparableAttribute attributes = 7;
    */
   attributes: ComparableAttribute[];
+
+  /**
+   * @generated from field: google.protobuf.Timestamp attribute_time = 8;
+   */
+  attributeTime?: Timestamp;
 };
 
 /**
@@ -781,6 +786,11 @@ export declare type GetSalesComparablesRequest = Message<"civil.public.parcels.v
    * @generated from field: google.type.Interval time_range = 4;
    */
   timeRange?: Interval;
+
+  /**
+   * @generated from field: optional bool return_only_frozen_sales = 5;
+   */
+  returnOnlyFrozenSales?: boolean;
 };
 
 /**
