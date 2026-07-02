@@ -101,17 +101,22 @@ export declare type ParcelImprovementsSummary = Message<"civil.public.parcels.v1
   primaryYearBuilt?: number;
 
   /**
-   * @generated from field: optional string primary_condition_id = 8;
+   * @generated from field: optional int32 primary_effective_year_built = 8;
+   */
+  primaryEffectiveYearBuilt?: number;
+
+  /**
+   * @generated from field: optional string primary_condition_id = 9;
    */
   primaryConditionId?: string;
 
   /**
-   * @generated from field: optional string total_market_improvement_value = 9;
+   * @generated from field: optional string total_market_improvement_value = 10;
    */
   totalMarketImprovementValue?: string;
 
   /**
-   * @generated from field: optional string total_assessed_improvement_value = 10;
+   * @generated from field: optional string total_assessed_improvement_value = 11;
    */
   totalAssessedImprovementValue?: string;
 };
